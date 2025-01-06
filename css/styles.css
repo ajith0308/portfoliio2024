@@ -11731,4 +11731,10 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+
+  .card img {
+    max-width: 80%; /* Limit the image width to 80% of its parent container */
+    height: auto;   /* Keep the image's aspect ratio intact */
+}
+
 }
