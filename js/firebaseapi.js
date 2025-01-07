@@ -3,7 +3,9 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
 
 // Your web app's Firebase configuration
 // Base64 encoded Firebase configuration
-const Config = process.env.firebasekey;
+
+const Config = 'eyJhcGlLZXkiOiAiQUl6YVN5Ql80VjN4end6Ml9hS1ZjOTBZS3kxQjhjcDd6d2Fzb1pRIiwgImF1dGhEb21haW4iOiAicG9ydGZvbGlvLTdmNzc4LmZpcmViYXNlYXBwLmNvbSIsICJwcm9qZWN0SWQiOiAicG9ydGZvbGlvLTdmNzc4IiwgInN0b3JhZ2VCdWNrZXQiOiAicG9ydGZvbGlvLTdmNzc4LmZpcmViYXNlc3RvcmFnZS5hcHAiLCAibWVzc2FnaW5nU2VuZGVySWQiOiAiOTM5Mjg3NDkxMTUiLCAiYXBwSWQiOiAiMTo5MzkyODc0OTExNTp3ZWI6MjU5OTRhZDBhNmZkYTI0ZjMyMDQxZSIsICJtZWFzdXJlbWVudElkIjogIkctSEtHUEdHNUhNRyJ9';
+
 // Decode the Base64 string
 const decodedConfig = atob(Config);
 
