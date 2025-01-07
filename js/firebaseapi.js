@@ -1,0 +1,35 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+// Your web app's Firebase configuration
+// Base64 encoded Firebase configuration
+const Config = process.env.firebasekey;
+// Decode the Base64 string
+const decodedConfig = atob(Config);
+
+// Parse the JSON string into an object
+const firebaseConfig = JSON.parse(decodedConfig);
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+export async function saveData(data) {
+
+
+    try {
+        const docRef = await addDoc(collection(db, "contactus"), data);
+        console.log("Document written with ID: ", docRef.id);
+        return docRef.id;
+    } catch (e) {
+        console.error("Error adding document: ", e);
+        throw e;
+    }
+
+}
+
+
